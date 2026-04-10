@@ -1,0 +1,512 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Manrope:wght@400;500;600&display=swap');
+
+/* ── TOKENS ─────────────────────────────────── */
+:root {
+  --navy:      #0a0f1e;
+  --navy-mid:  #1e2740;
+  --coral:     #f43f5e;
+  --teal:      #06b6d4;
+  --amber:     #f59e0b;
+  --purple:    #8b5cf6;
+  --emerald:   #10b981;
+  --bg:        #f4f6fb;
+  --surface:   #ffffff;
+  --border:    #e2e8f0;
+  --text:      #1e2740;
+  --muted:     #6b7280;
+  --light:     #f8fafc;
+}
+
+/* ── BASE ──────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+
+body {
+  font-family: 'Manrope', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* ── HEADER ────────────────────────────────── */
+.pa-header {
+  background: var(--navy);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.pa-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pa-brand-mark {
+  font-size: 1.3rem;
+  color: var(--teal);
+  line-height: 1;
+}
+
+.pa-brand-name {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+
+.pa-header-tag {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  font-family: 'Manrope', sans-serif;
+}
+
+/* ── MAIN ──────────────────────────────────── */
+.pa-main {
+  padding: 3.5rem 0 5rem;
+}
+
+/* ── HERO TEXT ─────────────────────────────── */
+.pa-hero-title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  line-height: 1.15;
+  color: var(--navy);
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.pa-hero-sub {
+  font-size: 1rem;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 520px;
+}
+
+/* ── INPUT PANEL ───────────────────────────── */
+.pa-input-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 24px rgba(10, 15, 30, 0.06);
+}
+
+.pa-panel-header { margin-bottom: 1.5rem; }
+
+.pa-panel-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 0.3rem;
+}
+
+.pa-panel-desc {
+  font-size: 0.83rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ── FORM ELEMENTS ─────────────────────────── */
+.pa-field-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--navy-mid);
+}
+
+.pa-required { color: var(--coral); }
+
+.pa-field-hint {
+  font-size: 0.7rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.pa-field-hint code {
+  background: var(--light);
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+  font-size: 0.68rem;
+  color: var(--coral);
+}
+
+.pa-input,
+.pa-textarea {
+  width: 100%;
+  background: var(--light);
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  color: var(--navy);
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.88rem;
+  padding: 0.7rem 0.9rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  resize: vertical;
+}
+
+.pa-input:focus,
+.pa-textarea:focus {
+  outline: none;
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.12);
+}
+
+.pa-textarea { min-height: 220px; line-height: 1.7; }
+
+.pa-apikey-input-wrap {
+  position: relative;
+}
+
+.pa-apikey-input-wrap .pa-input {
+  padding-right: 2.5rem;
+  font-family: monospace;
+  font-size: 0.82rem;
+}
+
+.pa-eye-btn {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 0.75rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+.pa-char-count {
+  font-size: 0.68rem;
+  color: var(--muted);
+  text-align: right;
+  margin-top: 0.3rem;
+}
+
+/* ── BUTTONS ───────────────────────────────── */
+.pa-btn-analyze {
+  width: 100%;
+  padding: 0.85rem 1.5rem;
+  background: var(--navy);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+}
+
+.pa-btn-analyze:hover:not(:disabled) {
+  background: var(--navy-mid);
+  box-shadow: 0 6px 20px rgba(10,15,30,0.2);
+  transform: translateY(-1px);
+}
+
+.pa-btn-analyze:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.pa-btn-icon { color: var(--teal); font-size: 1rem; }
+
+.pa-spinner {
+  width: 16px; height: 16px;
+  border: 2px solid rgba(255,255,255,0.25);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.pa-mock-note {
+  font-size: 0.7rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* ── ERROR ─────────────────────────────────── */
+.pa-error-banner {
+  background: rgba(244, 63, 94, 0.08);
+  border: 1px solid rgba(244, 63, 94, 0.25);
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  font-size: 0.82rem;
+  color: var(--coral);
+}
+
+/* ── RESULTS LAYOUT ────────────────────────── */
+.pa-results {
+  animation: fadeUp 0.45s cubic-bezier(.16,1,.3,1) both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: none; }
+}
+
+.pa-results-hero {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 16px rgba(10,15,30,0.05);
+}
+
+.pa-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2rem 0;
+}
+
+/* ── GAUGE ─────────────────────────────────── */
+.pa-gauge-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.pa-gauge-number {
+  font-family: 'Syne', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+}
+
+.pa-gauge-label-sm {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.pa-seniority-badge {
+  background: var(--navy);
+  color: var(--teal);
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.3em 0.9em;
+  border-radius: 20px;
+}
+
+/* ── SUMMARY ───────────────────────────────── */
+.pa-summary-block { margin-bottom: 1.25rem; }
+
+.pa-summary-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 0.4rem;
+}
+
+.pa-summary-text {
+  font-size: 0.92rem;
+  line-height: 1.75;
+  color: var(--text);
+}
+
+/* ── SKILLS CHART ──────────────────────────── */
+.pa-section-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 1rem;
+}
+
+.pa-bars { display: flex; flex-direction: column; gap: 0.75rem; }
+
+.pa-bar-row {
+  display: grid;
+  grid-template-columns: 130px 1fr 36px;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.pa-bar-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.pa-bar-track {
+  height: 8px;
+  background: var(--light);
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.pa-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  width: 0%;
+  animation: barGrow 0.9s cubic-bezier(.4,0,.2,1) both;
+}
+
+@keyframes barGrow {
+  from { width: 0 !important; }
+}
+
+.pa-bar-score {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-align: right;
+}
+
+/* ── STRENGTHS ─────────────────────────────── */
+.pa-strength-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  list-style: none;
+}
+
+.pa-strength-item {
+  display: flex;
+  gap: 0.65rem;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.pa-strength-icon {
+  color: var(--emerald);
+  font-size: 0.7rem;
+  margin-top: 0.25rem;
+  flex-shrink: 0;
+}
+
+/* ── SUGGESTIONS ───────────────────────────── */
+.pa-suggestions { display: flex; flex-direction: column; gap: 0.75rem; }
+
+.pa-suggestion-card {
+  background: var(--light);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.9rem 1rem;
+  transition: box-shadow 0.2s;
+}
+
+.pa-suggestion-card:hover {
+  box-shadow: 0 2px 12px rgba(10,15,30,0.08);
+}
+
+.pa-suggestion-title {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--navy);
+  margin-bottom: 0.2rem;
+}
+
+.pa-suggestion-detail {
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+/* ── BADGES ────────────────────────────────── */
+.pa-badge {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.25em 0.65em;
+  border-radius: 3px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.pa-badge--high   { background: rgba(244,63,94,0.1);  color: var(--coral);   }
+.pa-badge--medium { background: rgba(245,158,11,0.12); color: var(--amber);  }
+.pa-badge--low    { background: rgba(6,182,212,0.1);   color: var(--teal);   }
+
+/* ── SKILL CARDS ───────────────────────────── */
+.pa-skill-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.1rem;
+  height: 100%;
+  border-left: 3px solid transparent;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.pa-skill-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(10,15,30,0.08);
+}
+
+.pa-skill--critical     { border-left-color: var(--coral);   }
+.pa-skill--recommended  { border-left-color: var(--amber);   }
+.pa-skill--nice         { border-left-color: var(--emerald); }
+
+.pa-skill-name {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--navy);
+  margin-bottom: 0.4rem;
+}
+
+.pa-skill-badge {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.55rem;
+}
+
+.pa-skill-reason {
+  font-size: 0.76rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+/* ── RESET BUTTON ──────────────────────────── */
+.pa-btn-reset {
+  background: transparent;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  color: var(--muted);
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.82rem;
+  padding: 0.65rem 1.5rem;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.pa-btn-reset:hover {
+  border-color: var(--navy);
+  color: var(--navy);
+}
+
+/* ── RESPONSIVE ────────────────────────────── */
+@media (max-width: 576px) {
+  .pa-results-hero { padding: 1.25rem; }
+  .pa-bar-row { grid-template-columns: 100px 1fr 32px; }
+  .pa-input-panel { padding: 1.25rem; }
+}
