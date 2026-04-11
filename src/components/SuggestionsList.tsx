@@ -14,7 +14,6 @@ const PRIORITY_META: Record<Suggestion['priority'], { label: string; cls: string
 export default function SuggestionsList({ suggestions, strengths }: Props) {
   return (
     <div className="row g-4">
-      {/* Strengths */}
       <div className="col-md-5">
         <h3 className="pa-section-title">What's Working</h3>
         <ul className="pa-strength-list">
@@ -27,7 +26,6 @@ export default function SuggestionsList({ suggestions, strengths }: Props) {
         </ul>
       </div>
 
-      {/* Suggestions */}
       <div className="col-md-7">
         <h3 className="pa-section-title">Improvements</h3>
         <div className="pa-suggestions">

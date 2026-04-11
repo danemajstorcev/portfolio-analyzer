@@ -17,14 +17,12 @@ export default function ScoreGauge({ score, seniority }: Props) {
   return (
     <div className="pa-gauge-wrap">
       <svg width="180" height="180" viewBox="0 0 180 180">
-        {/* track */}
         <circle
           cx="90" cy="90" r={radius}
           fill="none"
           stroke="#e8edf4"
           strokeWidth="10"
         />
-        {/* fill */}
         <circle
           cx="90" cy="90" r={radius}
           fill="none"

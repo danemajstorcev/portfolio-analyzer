@@ -13,7 +13,6 @@ export default function ResultsPanel({ result, onReset }: Props) {
   return (
     <div className="pa-results">
 
-      {/* Top row: gauge + summary + bars */}
       <div className="pa-results-hero">
         <div className="row g-4 align-items-start">
           <div className="col-auto">
@@ -29,19 +28,14 @@ export default function ResultsPanel({ result, onReset }: Props) {
         </div>
       </div>
 
-      {/* Divider */}
       <hr className="pa-divider" />
 
-      {/* Strengths + Suggestions */}
       <SuggestionsList suggestions={result.suggestions} strengths={result.strengths} />
 
-      {/* Divider */}
       <hr className="pa-divider" />
 
-      {/* Missing skills */}
       <MissingSkills skills={result.missingSkills} />
 
-      {/* Re-analyze */}
       <div className="text-center mt-5">
         <button className="pa-btn-reset" onClick={onReset}>
           ↩ Analyze another portfolio
