@@ -1,4 +1,4 @@
-import type { CategoryScore } from '../types';
+import type { CategoryScore } from "../types";
 
 interface Props {
   scores: CategoryScore[];
@@ -6,15 +6,15 @@ interface Props {
 
 export default function SkillsChart({ scores }: Props) {
   return (
-    <div className="pa-skills-chart">
-      <h3 className="pa-section-title">Category Breakdown</h3>
-      <div className="pa-bars">
+    <div className="skills-chart">
+      <h3 className="section-title">Category Breakdown</h3>
+      <div className="bars">
         {scores.map((cat, i) => (
-          <div key={cat.label} className="pa-bar-row">
-            <div className="pa-bar-label">{cat.label}</div>
-            <div className="pa-bar-track">
+          <div key={cat.label} className="bar-row">
+            <div className="bar-label">{cat.label}</div>
+            <div className="bar-track">
               <div
-                className="pa-bar-fill"
+                className="bar-fill"
                 style={{
                   width: `${cat.score}%`,
                   background: cat.color,
@@ -22,7 +22,7 @@ export default function SkillsChart({ scores }: Props) {
                 }}
               />
             </div>
-            <div className="pa-bar-score" style={{ color: cat.color }}>
+            <div className="bar-score" style={{ color: cat.color }}>
               {cat.score}
             </div>
           </div>
